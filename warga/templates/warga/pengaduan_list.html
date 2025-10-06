@@ -1,0 +1,14 @@
+<h1>Daftar Semua Pengaduan</h1>
+
+<ul>
+    {% for pengaduan in object_list %}
+        <li>
+            <strong>{{ pengaduan.judul }}</strong><br>
+            <em>Pelapor: {{ pengaduan.pelapor.nama_lengkap }}</em><br>
+            <p>{{ pengaduan.deskripsi }}</p>
+            <p>Status: {{ pengaduan.get_status_display }}</p>
+        </li>
+    {% empty %}
+        <li>Belum ada pengaduan.</li>
+    {% endfor %}
+</ul>
